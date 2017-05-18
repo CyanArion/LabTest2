@@ -2,21 +2,17 @@ void setup()
 {
   size(500, 500);
  
-    
      for(int i = 0 ; i < 5; i ++)
   {
     gameObjects.add(new Cloud());  
   }
-  
-
- 
 }
 
 
-  float bx = 20;
+  float bx;
   float by = 40;
   float size = 20;
-  float speed = 3;
+  float speed;
   float radius;
   
   float cx = 200;
@@ -54,29 +50,27 @@ void draw()
     ellipse(bx + 10, by, size - 5, size - 5);
    }
    
-   if (mousePressed == false)
-   {
-    ellipse(bx, by + 40, size, size);
-    ellipse(bx + 10, by + 40, size - 5, size - 5);
-   }
-   
-   bx += speed;
+     bx += speed + 3;
    
    if (bx > width)
    {
     bx = 0; 
    }
    
+   else if (mousePressed == false)
+   {
+    ellipse(bx, by + 80, size, size);
+    ellipse(bx + 10, by + 80, size - 5, size - 5);
+   }
    
-   if (mousePressed == true && (height < 250))
+/*   if (mousePressed == true && ((height / 2) < height))
    {
      translate(0, 0);
      fill(0);
-    ellipse(mouseX, mouseY, 30, 30); 
+    ellipse(mouseX, mouseY, 30, 30);
    }
+*/
 }
-
-
 
 void keyPressed() 
 {
